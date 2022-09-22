@@ -1,4 +1,4 @@
-# BigDataProcSystems
+# BigDataProcSystems_practice
 Системы обработки больших данных
 ======================
 ##### Усовик С.В. (usservik@yandex.ru)
