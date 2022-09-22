@@ -1,5 +1,4 @@
 # Introduction to HDFS
-Sergei Yu. Papulin (papulin_bmstu@mail.ru)
 
 #### [Version 2018](https://github.com/BigDataProcSystems/Hadoop/blob/2018/hdfs_basics.ipynb)
 
