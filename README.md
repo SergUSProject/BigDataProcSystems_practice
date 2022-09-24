@@ -5,5 +5,5 @@
 Лекции:
 ----
 ### Введение в системы обработки больших данных
-#### [Hadoop. HDFS](hdfs/HDFS_practic.md) 
+#### [Hadoop. HDFS](hdfs/HDFS_practice.md) 
 #### [Hadoop. YARN](YARN/yarn_practice)
