@@ -6,4 +6,4 @@
 ----
 ### Введение в системы обработки больших данных
 #### [Hadoop. HDFS](hdfs/HDFS_practic.md) 
-#### [Hadoop. YARN](https://github.com/SergUSProject/BigDataProcSystems_lectures/blob/main/BigData_Intro.pdf)
+#### [Hadoop. YARN](YARN/yarn_practice)
