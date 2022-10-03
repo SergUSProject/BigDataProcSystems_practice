@@ -43,17 +43,17 @@ Precedence rules:
 - `yarn-env.sh` > `hadoop-env.sh` > hard-coded defaults
 - `YARN_xyz` > `HADOOP_xyz` > hard-coded defaults
 
-The configuration files you can find [here](../config/yarn).
+The configuration files you can find [here](../YARN/config).
 
 Or run the following commands to download and replace the local configuration files:
 
 ```bash
 # yarn-site.xml
-wget -O ~/BigData/hadoop/etc/hadoop/yarn-site.xml https://raw.githubusercontent.com/BigDataProcSystems/Practice/master/hadoop/config/yarn/yarn-site.xml
+wget -O ~/BigData/hadoop/etc/hadoop/yarn-site.xml https://raw.githubusercontent.com/SergUSProject/BigDataProcSystems_practice/main/YARN/config/yarn-site.xml
 # capacity-scheduler.xml
-wget -O ~/BigData/hadoop/etc/hadoop/capacity-scheduler.xml https://raw.githubusercontent.com/BigDataProcSystems/Practice/master/hadoop/config/yarn/capacity-scheduler.xml
+wget -O ~/BigData/hadoop/etc/hadoop/capacity-scheduler.xml https://raw.githubusercontent.com/SergUSProject/BigDataProcSystems_practice/main/YARN/config/capacity-scheduler.xml
 # mapred-site.xml
-wget -O ~/BigData/hadoop/etc/hadoop/mapred-site.xml https://raw.githubusercontent.com/BigDataProcSystems/Practice/master/hadoop/config/mapreduce/mapred-site.xml
+wget -O ~/BigData/hadoop/etc/hadoop/mapred-site.xml https://raw.githubusercontent.com/SergUSProject/BigDataProcSystems_practice/main/YARN/config/yarn-site.xml
 ```
 
 ### Memory allocation and vcores
