@@ -55,14 +55,13 @@ Or run the following commands to download:
 
 ```bash
 # .profile
-
-wget -O ~/.profile https://raw.githubusercontent.com/BigDataProcSystems/Practice/master/hadoop/config/hdfs/.profile
+wget -O ~/.profile https://raw.githubusercontent.com/SergUSProject/BigDataProcSystems_practice/main/hdfs/config/.profile 
 # hadoop-env.sh
-wget -O ~/BigData/hadoop/etc/hadoop/hadoop-env.sh https://raw.githubusercontent.com/BigDataProcSystems/Practice/master/hadoop/config/hdfs/hadoop-env.sh
+wget -O ~/BigData/hadoop/etc/hadoop/hadoop-env.sh https://raw.githubusercontent.com/SergUSProject/BigDataProcSystems_practice/main/hdfs/config/hadoop-env.sh
 # core-site.xml
-wget -O ~/BigData/hadoop/etc/hadoop/core-site.xml https://raw.githubusercontent.com/BigDataProcSystems/Practice/master/hadoop/config/hdfs/core-site.xml
+wget -O ~/BigData/hadoop/etc/hadoop/core-site.xml https://raw.githubusercontent.com/SergUSProject/BigDataProcSystems_practice/main/hdfs/config/core-site.xml
 # hdfs-site.xml
-wget -O ~/BigData/hadoop/etc/hadoop/hdfs-site.xml https://raw.githubusercontent.com/BigDataProcSystems/Practice/master/hadoop/config/hdfs/hdfs-site.xml
+wget -O ~/BigData/hadoop/etc/hadoop/hdfs-site.xml https://raw.githubusercontent.com/SergUSProject/BigDataProcSystems_practice/main/hdfs/config/hdfs-site.xml
 ```
 
 
