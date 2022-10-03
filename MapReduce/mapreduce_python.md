@@ -37,11 +37,11 @@ To get started, you need to have done the following:
 
 Mapper
 
-[tokenizer_mapper.py](../projects/py/wordcountapp/tokenizer_mapper.py)
+[tokenizer_mapper.py](../py/wordcountapp/tokenizer_mapper.py)
 
 Combiner/Reducer
 
-[intsum_reducer.py](../projects/py/wordcountapp/intsum_reducer.py)
+[intsum_reducer.py](../py/wordcountapp/intsum_reducer.py)
 
 ## Running MapReduce with local files
 
