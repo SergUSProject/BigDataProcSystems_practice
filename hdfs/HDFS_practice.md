@@ -48,7 +48,7 @@ By the end of this guide you will be able to:
 - `hadoop/etc/hadoop/core-site.xml` ([default values](https://hadoop.apache.org/docs/r3.1.2/hadoop-project-dist/hadoop-common/core-default.xml))
 - `hadoop/etc/hadoop/hdfs-site.xml` ([default values](https://hadoop.apache.org/docs/r3.1.2/hadoop-project-dist/hadoop-hdfs/hdfs-default.xml))
 
-You can find all configuration files that you should apply by following the link: [configuration files](../config/hdfs).
+You can find all configuration files that you should apply by following the link: [configuration files](../hdfs/config).
 
 
 Or run the following commands to download:
