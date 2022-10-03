@@ -132,7 +132,7 @@ For a single node cluster, tasks can fail due to resource scarcity. In this case
 
 ### Modifying `mapred-site.xml` to enable MapReduce on YARN mode
 
-Here is the path to the configuration file with correct settings: `config/mapreduce/mapred-site.xml`
+Here is the path to the configuration file with correct settings: `MapReduce/config/mapred-site.xml`
 
 ### Starting HDFS and YARN
 
