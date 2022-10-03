@@ -41,7 +41,7 @@ Mapper
 
 Combiner/Reducer
 
-[intsum_reducer.py](../py/wordcountapp/intsum_reducer.py)
+[intsum_reducer.py](./py/wordcountapp/intsum_reducer.py)
 
 ## Running MapReduce with local files
 
