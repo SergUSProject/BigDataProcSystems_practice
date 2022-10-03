@@ -37,7 +37,7 @@ To get started, you need to have done the following:
 
 Mapper
 
-[tokenizer_mapper.py](MapReduce/py/wordcountapp/tokenizer_mapper.py)
+[tokenizer_mapper.py](./py/wordcountapp/tokenizer_mapper.py)
 
 Combiner/Reducer
 
