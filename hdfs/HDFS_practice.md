@@ -55,6 +55,7 @@ Or run the following commands to download:
 
 ```bash
 # .profile
+
 wget -O ~/.profile https://raw.githubusercontent.com/BigDataProcSystems/Practice/master/hadoop/config/hdfs/.profile
 # hadoop-env.sh
 wget -O ~/BigData/hadoop/etc/hadoop/hadoop-env.sh https://raw.githubusercontent.com/BigDataProcSystems/Practice/master/hadoop/config/hdfs/hadoop-env.sh
