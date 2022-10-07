@@ -1,5 +1,4 @@
 # Configuring Spark on YARN
-Sergei Yu. Papulin (papulin_bmstu@mail.ru)
 
 ## Contents
 
