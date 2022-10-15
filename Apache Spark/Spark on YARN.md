@@ -217,3 +217,6 @@ Run `Jupyter` and select the `spark-python` kernel
 ## References 
 
 - [Running Spark on YARN](https://spark.apache.org/docs/2.3.0/running-on-yarn.html)
+
+
+https://disk.yandex.ru/d/KvLE5qrJp2gPTQ
