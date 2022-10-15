@@ -219,7 +219,4 @@ Run `Jupyter` and select the `spark-python` kernel
 - [Running Spark on YARN](https://spark.apache.org/docs/2.3.0/running-on-yarn.html)
 
 
-https://github.com/SergUSProject/BigDataProcSystems_practice/tree/main/Apache%20Spark/Spark_test
-
-
-https://disk.yandex.ru/d/KvLE5qrJp2gPTQ
+[Пример проекта обработки файла в Apache Spark](https://github.com/SergUSProject/BigDataProcSystems_practice/tree/main/Apache%20Spark/Spark_test)
