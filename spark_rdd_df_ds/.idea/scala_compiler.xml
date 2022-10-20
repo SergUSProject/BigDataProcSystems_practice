@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ScalaCompilerConfiguration">
-    <profile name="sbt 1" modules="spark-rdd-df-ds,spark_rdd_df_ds_1262" />
-  </component>
-</project>
