@@ -1,5 +1,5 @@
 # Introduction to YARN
-Sergei Yu. Papulin (papulin_bmstu@mail.ru)
+
 
 ## Contents
 
