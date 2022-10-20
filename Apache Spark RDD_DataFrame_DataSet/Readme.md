@@ -11,9 +11,9 @@
 
 #### Для работы необходимо:
 1) Загрузить данные из [файла со справочными данными поездок](src/main/resources/data/taxi_zones.csv) в RDD при помощи кода в [файле](src/main/scala/rdd_df_ds/TestRDD.scala).
-2) Загрузить данные из [файла со справочными данными поездок](src/main/resources/data/taxi_zones.csv) в DafaFrame и DataSet при помощи кода в [файле](.\Apache Spark RDD_DataFrame_DataSet\src\main\scala\rdd_df_ds\TestDataFrameDataSet.scala).
+2) Загрузить данные из [файла со справочными данными поездок](src/main/resources/data/taxi_zones.csv) в DafaFrame и DataSet при помощи кода в [файле](src/main/scala/rdd_df_ds/TestDataFrameDataSet.scala).
 3) Загрузить данные [файла с фактическими данными поездок в Parquet](src/main/resources/data/yellow_taxi_jan_25_2018)
-при помощи кода в [файле](.\Apache Spark RDD_DataFrame_DataSet\src\main\scala\DataApi\DataApi.scala).
+при помощи кода в [файле](src/main/scala/DataApi/DataApi.scala).
 
 **Задание**
 С помощью DSL построить таблицу, которая покажет какие районы самые популярные для заказов. Результат вывести на экран и записать в файл Паркет.
