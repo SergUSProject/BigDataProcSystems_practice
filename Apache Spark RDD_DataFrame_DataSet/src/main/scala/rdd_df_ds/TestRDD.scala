@@ -26,9 +26,11 @@ object TestRDD extends App {
     .map(t => TaxiZone(t(0), t(1), t(2), t(3)))
     .map(tz => (tz.Borough, 1))
     .reduceByKey(_ + _)
-    .persist(StorageLevel.MEMORY_ONLY)
+    //.persist(StorageLevel.MEMORY_ONLY)
+  
+    //.cache()
 
-  value.count()
+  //value.count()
 
   val taxiZoneRDD: Unit = value
     .foreach(x => println(s"${x._1} -> ${x._2}"))
