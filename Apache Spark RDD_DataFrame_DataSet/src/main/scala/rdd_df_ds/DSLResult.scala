@@ -4,12 +4,15 @@ import org.apache.spark.sql.functions._
 import org.apache.spark.sql.{DataFrame, SparkSession}
 
 object DSLResult {
-  def readParquet(path: String)(implicit spark: SparkSession): DataFrame = spark.read.load(path)
-  def readCSV(path: String)(implicit spark: SparkSession):DataFrame =
+  def readParquet(path: String)(implicit spark: SparkSession): DataFrame = spark.read.load(path).cache().count()
+  def readCSV(path: String)(implicit spark: SparkSession):DataFrame = {
     spark.read
       .option("header", "true")
       .option("inferSchema", "true")
       .csv(path)
+      .cashe()
+      .count()
+  
 
   def processTaxiData(taxiDF: DataFrame, taxiZonesDF: DataFrame) = {
     taxiDF
@@ -33,7 +36,8 @@ object DSLResult {
 
     val taxiZonesDF2 = readCSV("src/main/resources/data/taxi_zones.csv")
     val taxiDF2 = readParquet("src/main/resources/data/yellow_taxi_jan_25_2018")
-
+    
+    
     val value = processTaxiData(taxiZonesDF2, taxiDF2)
     value.show()
 
