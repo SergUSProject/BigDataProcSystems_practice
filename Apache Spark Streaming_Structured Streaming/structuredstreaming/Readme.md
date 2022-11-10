@@ -6,4 +6,4 @@
 
 - [Режим полного вывода и режим обновления](/doc/spark_streaming_structured_append_timestamp.md)
 - [Как включить временную метку](./doc/spark_streaming_structured_append_timestamp.md)
-- [Окно в режиме добавления вывода](/doc/spark_streaming_structured_append_timestamp.md)
+- [Окно в режиме добавления вывода](/doc/spark_streaming_structured_window_append.md)
