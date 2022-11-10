@@ -25,8 +25,8 @@
 
 ## Исходный код
 
-- Потоковый сервер ([stream_server.py](../projects/structuredstreaming/stream_server.py))
-- Приложение Spark Structured Streaming ([append_timestamp_streaming.py](../projects/structuredstreaming/append_timestamp_streaming.py))
+- Потоковый сервер ([stream_server.py](../code/stream_server.py))
+- Приложение Spark Structured Streaming ([append_timestamp_streaming.py](../code/append_timestamp_streaming.py))
 
 
 ## Приложение Structured Streaming 
