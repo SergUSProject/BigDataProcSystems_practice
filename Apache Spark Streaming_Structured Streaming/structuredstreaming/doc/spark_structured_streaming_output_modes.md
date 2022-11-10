@@ -26,7 +26,7 @@
 
 ## Исходный код
 
-- Исходный код приложения Spark Structured Streaming ([complete_update_streaming.py](/complete_update_streaming.py))
+- Исходный код приложения Spark Structured Streaming ([complete_update_streaming.py](./code/complete_update_streaming.py))
 
 
 ## Запуск приложения
