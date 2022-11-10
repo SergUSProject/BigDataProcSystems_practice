@@ -5,11 +5,11 @@
 ## Содержание
 
 -  [Необходимое ПО](#Необходимое-ПО)
-- [Исходный код](Исходный-код) 
-- [Потоковый сервер](Потоковый-сервер)
+- [Исходный код](#Исходный-код) 
+- [Потоковый сервер](#Потоковый-сервер)
 - [Приложение Spark Structured Streaming](#Приложение-Spark-Structured-Streaming)
-- [Запуск приложения](Запуск-приложения)
-- [Использованная литература](Использованная-литература)
+- [Запуск приложения](#Запуск-приложения)
+- [Использованная литература](#Использованная-литература)
 
 ## Необходимое ПО
 
@@ -24,8 +24,8 @@
 
 ## Исходный код
 
-- Потоковый сервер ([stream_server.py](./stream_server.py))
-- Приложение Spark Structured Streaming ([window_append_streaming.py](./window_append_streaming.py))
+- Потоковый сервер ([stream_server.py](../code/stream_server.py))
+- Приложение Spark Structured Streaming ([window_append_streaming.py](../code/window_append_streaming.py))
 
 
 
