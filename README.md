@@ -4,7 +4,6 @@
 ##### Усовик С.В. (usovik@bmstu.ru)
 Разделы практики:
 ----
-#### [Docker](hdfs/HDFS_practice.md)
 #### [Hadoop. HDFS](hdfs/HDFS_practice.md) 
 #### [Hadoop. YARN](YARN/yarn_practice.md)
 #### [Hadoop. MapReduce](MapReduce/mapreduce_python.md)
