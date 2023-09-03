@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spark-worker-deployment
+  namespace: spark
+  labels:
+    environment: dev
+    app: spark
+    role: worker
+    version: 2.4.4
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spark
+      role: worker
+  template:
+    metadata:
+      labels:
+        app: spark
+        role: worker
+    spec:
+      containers:
+        - name: spark-worker
+          image: custom-spark:v2.4.4
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: MASTER_IP_RESOLVER
+              value: "*.spark-master-service.spark.svc.cluster.local"
+            - name: MASTER_HOSTNAME
+              value: "spark-master"
+          command: ["/opt/start-spark.sh"]
+          args: ["worker"]
+          resources:
+            requests:
+              cpu: 500m
+          lifecycle:
+            preStop:
+              exec:
+                command: ["/opt/stop-spark.sh", "worker"]

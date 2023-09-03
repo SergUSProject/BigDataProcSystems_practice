@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+  master:
+    image: spark-ubuntu-master
+    # build:          # use this option if an image doesn't exist
+    #   context: .
+    #   dockerfile: ./master/Dockerfile
+    command: master   # argument for entrypoint script
+    hostname: master
+    environment: 
+      - SSH_PRIVATE_KEY=${SSH_PRIVATE_KEY}
+    ports:
+      - "9870:9870"
+      - "8088:8088"
+      - "18080:18080"
+      - "9999:9999"
+    container_name: master
+    volumes: 
+      - ./data:/home/bigdata/data
+      - ./app:/home/bigdata/app
+  worker:
+    image: spark-ubuntu-base
+    # build:
+    #   context: .
+    #   dockerfile: ./base/Dockerfile
+    command: worker
+    environment: 
+      - SSH_PUBLIC_KEY=${SSH_PUBLIC_KEY}

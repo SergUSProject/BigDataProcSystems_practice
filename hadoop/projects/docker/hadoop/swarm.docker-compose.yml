@@ -1,0 +1,48 @@
+version: "3.7"
+
+services:
+  master:     # Master Service
+    image: 192.168.5.5:5000/hadoop-master-image
+    ports:
+      - target: 9870      # Namenode
+        published: 9870
+        protocol: tcp
+        mode: host
+      - target: 8088      # Resource Manager
+        published: 8088
+        protocol: tcp
+        mode: host
+      - target: 19888     # History Server
+        published: 19888
+        protocol: tcp
+        mode: host
+    deploy:
+      mode: replicated
+      replicas: 1
+      endpoint_mode: dnsrr
+      placement:
+        constraints:
+          - node.role == manager
+    volumes: 
+      - ./app:/app     # jar files
+      - ./data:/data   # data to copy to HDFS
+    networks:
+      - hadoop-network
+
+  worker:     # Worker Service
+    image: 192.168.5.5:5000/hadoop-worker-image
+    networks:
+      - hadoop-network
+    deploy:
+      mode: global
+      resources:
+        limits:
+            cpus: "1"
+            memory: 1G
+
+networks:
+  hadoop-network: # Network
+    driver: overlay
+    ipam:
+      config:
+      - subnet:  10.0.1.0/24

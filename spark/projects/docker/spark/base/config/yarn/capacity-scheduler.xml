@@ -1,0 +1,386 @@
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+<configuration>
+        
+    <property>
+        <name>yarn.scheduler.capacity.maximum-applications</name>
+        <value>10000</value>
+        <description>
+        Maximum number of applications that can be pending and running.
+        </description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.maximum-am-resource-percent</name>
+        <value>0.1</value>
+        <description>
+        Maximum percent of resources in the cluster which can be used to run 
+        application masters i.e. controls number of concurrent running
+        applications.
+        </description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.resource-calculator</name>
+        <value>org.apache.hadoop.yarn.util.resource.DefaultResourceCalculator</value>
+        <description>
+        The ResourceCalculator implementation to be used to compare 
+        Resources in the scheduler.
+        The default i.e. DefaultResourceCalculator only uses Memory while
+        DominantResourceCalculator uses dominant-resource to compare 
+        multi-dimensional resources such as Memory, CPU etc.
+        </description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.root.queues</name>
+        <value>default</value>
+        <description>
+        The queues at the this level (root is the root queue).
+        </description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.root.default.capacity</name>
+        <value>100</value>
+        <description>Default queue target capacity.</description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.root.default.user-limit-factor</name>
+        <value>1</value>
+        <description>
+        Default queue user limit a percentage from 0.0 to 1.0.
+        </description>
+    </property>
+
+    <!--<property>
+        <name>yarn.scheduler.capacity.root.default.maximum-capacity</name>
+        <value>100</value>
+        <description>
+        The maximum capacity of the default queue. 
+        </description>
+    </property>-->
+
+    <property>
+        <name>yarn.scheduler.capacity.root.default.state</name>
+        <value>RUNNING</value>
+        <description>
+        The state of the default queue. State can be one of RUNNING or STOPPED.
+        </description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.root.default.acl_submit_applications</name>
+        <value>*</value>
+        <description>
+        The ACL of who can submit jobs to the default queue.
+        </description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.root.default.acl_administer_queue</name>
+        <value>*</value>
+        <description>
+        The ACL of who can administer jobs on the default queue.
+        </description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.root.default.acl_application_max_priority</name>
+        <value>*</value>
+        <description>
+        The ACL of who can submit applications with configured priority.
+        For e.g, [user={name} group={name} max_priority={priority} default_priority={priority}]
+        </description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.root.default.maximum-application-lifetime
+        </name>
+        <value>-1</value>
+        <description>
+            Maximum lifetime of an application which is submitted to a queue
+            in seconds. Any value less than or equal to zero will be considered as
+            disabled.
+            This will be a hard time limit for all applications in this
+            queue. If positive value is configured then any application submitted
+            to this queue will be killed after exceeds the configured lifetime.
+            User can also specify lifetime per application basis in
+            application submission context. But user lifetime will be
+            overridden if it exceeds queue maximum lifetime. It is point-in-time
+            configuration.
+            Note : Configuring too low value will result in killing application
+            sooner. This feature is applicable only for leaf queue.
+        </description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.root.default.default-application-lifetime
+        </name>
+        <value>-1</value>
+        <description>
+            Default lifetime of an application which is submitted to a queue
+            in seconds. Any value less than or equal to zero will be considered as
+            disabled.
+            If the user has not submitted application with lifetime value then this
+            value will be taken. It is point-in-time configuration.
+            Note : Default lifetime can't exceed maximum lifetime. This feature is
+            applicable only for leaf queue.
+        </description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.node-locality-delay</name>
+        <value>40</value>
+        <description>
+        Number of missed scheduling opportunities after which the CapacityScheduler 
+        attempts to schedule rack-local containers.
+        When setting this parameter, the size of the cluster should be taken into account.
+        We use 40 as the default value, which is approximately the number of nodes in one rack.
+        Note, if this value is -1, the locality constraint in the container request
+        will be ignored, which disables the delay scheduling.
+        </description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.rack-locality-additional-delay</name>
+        <value>-1</value>
+        <description>
+        Number of additional missed scheduling opportunities over the node-locality-delay
+        ones, after which the CapacityScheduler attempts to schedule off-switch containers,
+        instead of rack-local ones.
+        Example: with node-locality-delay=40 and rack-locality-delay=20, the scheduler will
+        attempt rack-local assignments after 40 missed opportunities, and off-switch assignments
+        after 40+20=60 missed opportunities.
+        When setting this parameter, the size of the cluster should be taken into account.
+        We use -1 as the default value, which disables this feature. In this case, the number
+        of missed opportunities for assigning off-switch containers is calculated based on
+        the number of containers and unique locations specified in the resource request,
+        as well as the size of the cluster.
+        </description>
+    </property>
+
+    <!--<property>
+        <name>yarn.scheduler.capacity.queue-mappings</name>
+        <value></value>
+        <description>
+        A list of mappings that will be used to assign jobs to queues
+        The syntax for this list is [u|g]:[name]:[queue_name][,next mapping]*
+        Typically this list will be used to map users to queues,
+        for example, u:%user:%user maps all users to queues with the same name
+        as the user.
+        </description>
+    </property>-->
+
+    <property>
+        <name>yarn.scheduler.capacity.queue-mappings-override.enable</name>
+        <value>false</value>
+        <description>
+        If a queue mapping is present, will it override the value specified
+        by the user? This can be used by administrators to place jobs in queues
+        that are different than the one specified by the user.
+        The default is false.
+        </description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.per-node-heartbeat.maximum-offswitch-assignments</name>
+        <value>1</value>
+        <description>
+        Controls the number of OFF_SWITCH assignments allowed
+        during a node's heartbeat. Increasing this value can improve
+        scheduling rate for OFF_SWITCH containers. Lower values reduce
+        "clumping" of applications on particular nodes. The default is 1.
+        Legal values are 1-MAX_INT. This config is refreshable.
+        </description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.application.fail-fast</name>
+        <value>false</value>
+        <description>
+        Whether RM should fail during recovery if previous applications'
+        queue is no longer valid.
+        </description>
+    </property>
+
+    <!--Custom configuration-->
+
+    <!--Setting up queues-->
+
+    <!--structure-->
+
+    <!-- <property>
+        <name>yarn.scheduler.capacity.root.queues</name>
+        <value>mrapp,sparkapp,default</value>
+        <description>The queues at the this level (root is the root queue).
+        </description>
+    </property>
+    <property>
+        <name>yarn.scheduler.capacity.root.mrapp.queues</name>
+        <value>dev,prod</value>
+        <description>The queues at the this level (root is the root queue).
+        </description>
+    </property> -->
+
+    <!--capacity-->
+
+    <!-- <property>
+        <name>yarn.scheduler.capacity.root.mrapp.capacity</name>
+        <value>90</value>
+        <description>The mrapp queue target capacity.</description>
+    </property>
+    <property>
+        <name>yarn.scheduler.capacity.root.mrapp.dev.capacity</name>
+        <value>80</value>
+        <description>The mrapp queue target capacity.</description>
+    </property>
+    <property>
+        <name>yarn.scheduler.capacity.root.mrapp.prod.capacity</name>
+        <value>20</value>
+        <description>The mrapp queue target capacity.</description>
+    </property>
+    <property>
+        <name>yarn.scheduler.capacity.root.default.capacity</name>
+        <value>5</value>
+        <description>The default queue target capacity.</description>
+    </property>
+    <property>
+        <name>yarn.scheduler.capacity.root.sparkapp.capacity</name>
+        <value>5</value>
+        <description>The sparkapp queue target capacity.</description>
+    </property> -->
+
+    <!--maximum-capacity-->
+
+    <!-- <property>
+        <name>yarn.scheduler.capacity.root.mrapp.dev.maximum-capacity</name>
+        <value>100</value>
+        <description>
+        The maximum capacity of the mrapp queue. 
+        </description>
+    </property>
+    <property>
+        <name>yarn.scheduler.capacity.root.mrapp.prod.maximum-capacity</name>
+        <value>100</value>
+        <description>
+        The maximum capacity of the mrapp queue. 
+        </description>
+    </property>
+    <property>
+        <name>yarn.scheduler.capacity.root.sparkapp.maximum-capacity</name>
+        <value>10</value>
+        <description>
+        The maximum capacity of the sparkapp queue. 
+        </description>
+    </property>
+    <property>
+        <name>yarn.scheduler.capacity.root.default.maximum-capacity</name>
+        <value>10</value>
+        <description>
+        The maximum capacity of the default queue. 
+        </description>
+    </property> -->
+
+    <!--Resource Allocation-->
+
+    <!-- <property>
+        <name>yarn.scheduler.capacity.root.mrapp.maximum-allocation-mb</name>
+        <value>1024</value>
+        <description>
+        The per queue maximum limit of memory to allocate to each container request at the Resource Manager. 
+        This setting overrides the cluster configuration yarn.scheduler.maximum-allocation-mb. 
+        This value must be smaller than or equal to the cluster maximum. 
+        </description>
+    </property>
+    <property>
+        <name>yarn.scheduler.capacity.root.minimum-user-limit-percent</name>
+        <value>20</value>
+        <description>
+        Each queue enforces a limit on the percentage of resources allocated to a user at any given time, 
+        if there is demand for resources. The user limit can vary between a minimum and maximum value. 
+        The former (the minimum value) is set to this property value and the latter (the maximum value) 
+        depends on the number of users who have submitted applications. For e.g., suppose the value of this 
+        property is 25. If two users have submitted applications to a queue, no single user can use more 
+        than 50% of the queue resources. If a third user submits an application, no single user can use more 
+        than 33% of the queue resources. With 4 or more users, no user can use more than 25% of the queues 
+        resources. A value of 100 implies no user limits are imposed. The default is 100. 
+        Value is specified as a integer.
+        </description>
+    </property> -->
+
+    <!--Running and Pending Application Limits-->
+
+    <!-- <property>
+        <name>yarn.scheduler.capacity.root.mrapp.maximum-applications</name>
+        <value>2</value>
+        <description>
+        Maximum number of applications that can be pending and running.
+        </description>
+    </property> -->
+
+    <!--Queue Administration & Permissions-->
+
+    <!--yarn.scheduler.capacity.root.bt.acl_submit_applications=*-->
+    <!-- <property>
+        <name>yarn.scheduler.capacity.root.sparkapp.state</name>
+        <value>STOPPED</value>
+        <description>
+        The state of the queue. Can be one of RUNNING or STOPPED. If a queue is in STOPPED state, new applications 
+        cannot be submitted to itself or any of its child queues. Thus, if the root queue is STOPPED no applications 
+        can be submitted to the entire cluster. Existing applications continue to completion, thus the queue can be 
+        drained gracefully. Value is specified as Enumeration.</description>
+    </property> -->
+
+
+    <!--Queue Mapping based on User or Group, Application Name or user defined placement rules-->
+
+    <!-- <property>
+        <name>yarn.scheduler.capacity.queue-mappings</name>
+        <value>g:bigdata:dev</value>
+        <description>
+        This configuration specifies the mapping of user or group to a specific queue. You can map 
+        a single user or a list of users to queues. Syntax: [u or g]:[name]:[queue_name][,next_mapping]*. 
+        Here, u or g indicates whether the mapping is for a user or group. The value is u for user and 
+        g for group. name indicates the user name or group name. To specify the user who has submitted 
+        the application, %user can be used. queue_name indicates the queue name for which the application 
+        has to be mapped. To specify queue name same as user name, %user can be used. To specify queue name 
+        same as the name of the primary group for which the user belongs to, %primary_group can be used.
+        </description>
+    </property>
+    <property>
+        <name>yarn.scheduler.queue-placement-rules.app-name</name>
+        <value>wordCountMRApp:prod</value>
+        <description>
+        This configuration specifies the mapping of application_name to a specific queue. You can map a single 
+        application or a list of applications to queues. Syntax: [app_name]:[queue_name][,next_mapping]*. 
+        Here, app_name indicates the application name you want to do the mapping. queue_name indicates the queue 
+        name for which the application has to be mapped. To specify the current application’s name as the app_name, 
+        %application can be used.
+        </description>
+    </property> -->
+
+
+    <!--Capacity Scheduler container preemption-->
+
+    <property>
+        <name>yarn.resourcemanager.monitor.capacity.preemption.max_wait_before_kill</name>
+        <value>15000</value>
+        <description>
+        Time in milliseconds between requesting a preemption from an application and killing the container. 
+        Default value is 15000
+        </description>
+    </property>
+</configuration>

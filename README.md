@@ -1,15 +1,18 @@
-# BigDataProcSystems_practice
-Системы обработки больших данных (практика)
-======================
-##### Усовик С.В. (usovik@bmstu.ru)
-Разделы практики:
-----
-#### [Hadoop. HDFS](hdfs/HDFS_practice.md) 
-#### [Hadoop. YARN](YARN/yarn_practice.md)
-#### [Hadoop. MapReduce](MapReduce/mapreduce_python.md)
-#### Apache Spark. 
-######  [- Spark on YARN](https://github.com/SergUSProject/BigDataProcSystems_practice/blob/9ed0ba62fc0b01181dce99bf35fb77b15daf9e8b/Apache%20Spark/Spark%20on%20YARN.md)
-######  [- Spark RDD API, DataFrame API, Dataset API](Apache%20Spark%20RDD_DataFrame_DataSet/)
-######  [- Apache Spark Streaming и Apache Spark Structured Streaming](Apache%20Spark%20Streaming_Structured%20Streaming/Readme.md)
-#### Apache Kafka.
-#####   [- Введение в распределенный брокер сообщений Apache Kafka](Apache%20Kafka/Readme.md)
+### Раздел:  "Использование алгоритмов машинного обучения в распределенных средах" (практика)
+
+Усовик С.В. (usovik@bmstu.ru)
+
+
+
+В разделе представлена практика по разворачиванию и конфигурации распределенных систем обработки данных, установке фреймворков обработки данных и алгоритмов машинного обучения. Приведены примеры создания конвееров машинного обучения, включающие этапы от предварительной обработки данных до вычисления метрик итоговой ML-модели. Помимо этого в практике уделено внимание вспомогательным технологиям: диспетчерам сообщений, распределенной файловой ситеме, койтейнеризации и диспетчерам ресурсов.
+
+
+
+#### <u>Содержание</u>
+
+- [Hadoop](hadoop/ReadMe.md)
+- [Spark](spark/ReadMe.md)
+
+
+
+Все примеры сопровождаются ссылками на необходимые наборы данных. Для запуска примеров из практики необходимо воспользоваться предварительно сконфигурированной виртуальной машиной, расположенной [здесь](https://disk.yandex.ru/d/0Hd92rzNB0_IHg)

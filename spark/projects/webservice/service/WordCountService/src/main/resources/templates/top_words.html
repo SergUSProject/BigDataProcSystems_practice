@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Top 10 words</title>
+</head>
+<body>
+    <h2>Top 10 words</h2>
+    <table>
+        <thead>
+            <tr>
+                <th> Word </th>
+                <th> Count </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:if="${words.empty}">
+                <td colspan="2"> No words to display </td>
+            </tr>
+            <tr th:each="item : ${words}">
+                <td><span th:text="${item.word}"> Word </span></td>
+                <td><span th:text="${item.count}"> Count </span></td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/">Back to main</a>
+</body>
+</html>

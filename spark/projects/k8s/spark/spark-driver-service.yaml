@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: spark-driver-service
+  namespace: spark
+  labels:
+    spark-role: driver
+spec:
+  selector:
+    spark-role: driver
+  ports:
+    - protocol: TCP
+      port: 9998
+      targetPort: 4040

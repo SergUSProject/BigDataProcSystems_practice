@@ -1,0 +1,11 @@
+{
+    "display_name": "PySpark",
+    "language_info": { "name": "python" },
+    "argv": ["/usr/bin/python3", "-m", "ipykernel", "-f", "{connection_file}"],
+    "env": {
+        "SPARK_HOME": "/home/bigdata/spark",
+        "PYSPARK_PYTHON": "/usr/bin/python3",
+        "PYSPARK_DRIVER_PYTHON": "/usr/bin/python3",
+        "PYTHONPATH": "/home/bigdata/spark/python:/home/bigdata/spark/python/lib/py4j-0.10.7-src.zip"
+     }
+}

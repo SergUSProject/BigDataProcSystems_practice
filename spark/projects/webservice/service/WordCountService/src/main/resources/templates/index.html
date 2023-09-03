@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+</head>
+<body>
+    <form method="post" data-target="/api/v1/messages">
+        <textarea id="message" name="message" rows="5" cols=""></textarea><br>
+        <button>Submit</button>
+    </form>
+    <a href="/top-words">Top 10 words</a><br>
+    <a href="/word-counts">All words</a>
+    <script>
+        $("form").submit(function(e) {
+            e.preventDefault();
+
+            var target = $("form").data("target");
+
+            var message = $("#message").val();
+
+            $.ajax({
+              type: "POST",
+              url: target,
+              contentType: "application/json; charset=utf-8",
+              data: JSON.stringify({"content": message, "uuid": uuidv4()}),
+              success: function() {
+                console.log("success");
+                $("#message").val("");
+              },
+              error: function(e) {
+                console.log("error");
+                console.log(e);
+              },dataType: 'text'
+              });
+
+        });
+
+        /*
+            UUID Generator
+
+            Reference:
+            https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript?page=1&tab=votes
+        */
+        function uuidv4() {
+          return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+          });
+        }
+
+    </script>
+</body>
+</html>

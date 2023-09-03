@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spark-master-deployment
+  namespace: spark
+  labels:
+    environment: dev
+    app: spark
+    role: master
+    version: 2.4.4
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spark
+      role: master
+  template:
+    metadata:
+      labels:
+        app: spark
+        role: master
+    spec:
+      hostname: spark-master
+      containers:
+        - name: spark-master
+          image: custom-spark:v2.4.4
+          imagePullPolicy: IfNotPresent
+          command: ["/opt/start-spark.sh"]
+          args: ["master"]
+          ports:
+            - containerPort: 7077
+            - containerPort: 8080
+          resources:
+            requests:
+              cpu: 500m
+          lifecycle:
+            preStop:
+              exec:
+                command: ["/opt/stop-spark.sh", "master"]
+    

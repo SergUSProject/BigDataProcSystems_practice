@@ -1,0 +1,33 @@
+version: "3.7"
+
+services:
+  master:     # Master Node
+    image: hadoop-master-image
+    build:
+      context: .
+      dockerfile: ./master/Dockerfile
+    ports:
+      - "9870:9870"     # Namenode
+      - "8088:8088"     # Resource Manager
+      - "19888:19888"   # History Server
+    container_name: master
+    volumes: 
+      - ./app:/home/bigdata/app     # jar files
+      - ./data:/home/bigdata/data   # data to copy to HDFS
+    networks:
+      - hd-network
+
+  worker:     # Worker Node
+    image: hadoop-worker-image
+    build:
+      context: .
+      dockerfile: ./worker/Dockerfile
+    networks:
+      - hd-network
+
+networks:
+  hd-network: # Network
+    driver: bridge
+    ipam:
+      config:
+      - subnet:  172.20.0.0/24
